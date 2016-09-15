@@ -1,34 +1,71 @@
-% My Beamer by Y.Chubachi (2016)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% My Beamer for Lecture by Y.Chubachi (2016)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% * 色の設定
-% - texdoc xcolorで色見本が確認できる（dvipsnames）
-% \colorlet{ThemeColor}{Blue!70!white} % 基調となる色
-\definecolor{ThemeColor}{HTML}{3E1586} % 基調となる色
-\colorlet{AlertedText}{orange}        % 強調（alert）の色
+% Beamerのマニュアルは次のコマンドで参照できる
+%   $ texdoc beamer
 
-% * Beamerのテーマ
-% \usetheme{default}
-% \usetheme{Szeged} % 横線
-\usetheme{Madrid}
-% \usetheme{Goettingen} % サイドバーの色が変わらない
-% \usetheme[hideothersubsections]{Berkeley}
+%%% Beamerテーマの指定
 
-% * インナーテーマ
+% Beamerのテーマと配色のマトリクス
+%   Beamer Theme Matrix
+%   - https://www.hartwork.org/beamer-theme-matrix/
+
+\usetheme{default}
+
+%%% 基調となる色の設定
+
+% 色の見本は次のコマンドで調べることができる
+% $ texdoc xcolor # dvipsnamesの箇所
+\definecolor{lightgreen}{HTML}{ABE3AE} % ロゴの色(AIITオレンジ）
+\definecolor{green}{HTML}{3FB83D} % 基調となる色
+\definecolor{lightbrown}{HTML}{D0AC71} % タイトルの背景色
+\definecolor{brown}{HTML}{773E28} % メニューの背景色
+
+\usecolortheme{default}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=brown}
+\setbeamercolor{example text}{fg=green!50!black}
+
+% \setbeamercolor{structure}{fg=MainColor}
+
+% \setbeamercolor{palette primary}{fg=LogoColor, bg=TitleBg}
+% \setbeamercolor{palette secondary}{fg=LogoColor,bg=MenuBg}
+% \setbeamercolor{palette tertiary}{fg=LogoColor, bg=TitleBg}
+% \setbeamercolor{palette quaternary}{fg=green}
+
+\setbeamercolor{structure}{fg=brown}
+% \setbeamercolor{background canvas}{bg=purple}
+\setbeamercolor{titlelike}{}
+
+\setbeamercolor{palette primary}{fg=red}
+\setbeamercolor{palette secondary}{fg=red,bg=green} % SBの右上の四角も
+\setbeamercolor{palette tertiary}{fg=blue}
+\setbeamercolor{palette quaternary}{fg=yellow}
+
+
+%%% アウターテーマ
+%% サイドバーの設定
+\useoutertheme[height=1.5cm, width=2cm, right]{sidebar} % サイドバーの配置
+\setbeamercolor{sidebar}{bg=lightgreen} % 背景
+\setbeamercolor{palette sidebar primary}{fg=red,bg=yellow} % 未使用？
+\setbeamercolor{palette sidebar secondary}{fg=brown,bg=green} % セクション
+\setbeamercolor{palette sidebar tertiary}{fg=black} % 著者
+\setbeamercolor{palette sidebar quaternary}{fg=brown} % タイトル
+
+%%% インナーテーマ
 \useinnertheme{circles} % 箇条書きをシンプルに
 \useinnertheme{rounded}
 \setbeamertemplate{blocks}[rounded] % 影を消す（オプションで消せない？）
 
-% * アウターテーマ
-\useoutertheme[height=1.5cm, width=2cm, right]{sidebar}
-\setbeamercolor{frametitle}{fg=white} % heightを設定すると黒になるのを修正
+%% フレームタイトル
+% \setbeamercolor{frametitle}{fg=white} % heightを設定すると黒になるのを修正
+
+%%% ナビゲーション
 \setbeamertemplate{navigation symbols}{} % ナビゲーションシンボルを消す
-% \setbeamertemplate{footline}[frame number] % フッターはスライド番号のみ
+\setbeamertemplate{footline}[frame number] % フッターはスライド番号のみ
 
-% * 色のテーマ
-\usecolortheme[named=ThemeColor]{structure} % 基調となる色を設定
-\setbeamercolor{alerted text}{fg=AlertedText} % 強調（alert）の色を設定
-
-% * フォントテーマ
+% フォントテーマ
 \usefonttheme{structurebold}
 \renewcommand{\kanjifamilydefault}{\gtdefault}  % 本文の和字もゴシック体に
 
@@ -45,8 +82,3 @@
 \setbeamerfont{frametitle}{size=\large}
 \setbeamertemplate{itemize/enumerate body begin}{\normalsize}
 \setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
-
-
-% 参考
-% - Beamer — Tasuku Soma's webpage
-% http://www.opt.mist.i.u-tokyo.ac.jp/~tasuku/beamer.html#tips
