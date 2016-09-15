@@ -2,7 +2,7 @@
 % My Beamer for Lecture by Y.Chubachi (2016)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Beamerのマニュアルは次のコマンドで参照できる
+%%% Beamerのマニュアルは次のコマンドで参照できる
 %   $ texdoc beamer
 
 %%% Beamerテーマの指定
@@ -17,10 +17,10 @@
 
 % 色の見本は次のコマンドで調べることができる
 % $ texdoc xcolor # dvipsnamesの箇所
-\definecolor{lightgreen}{HTML}{ABE3AE} % ロゴの色(AIITオレンジ）
-\definecolor{green}{HTML}{3FB83D} % 基調となる色
-\definecolor{lightbrown}{HTML}{D0AC71} % タイトルの背景色
-\definecolor{brown}{HTML}{773E28} % メニューの背景色
+\definecolor{lightgreen}{HTML}{ABE3AE}
+\definecolor{green}     {HTML}{3FB83D}
+\definecolor{lightbrown}{HTML}{D0AC71}
+\definecolor{brown}     {HTML}{773E28}
 
 \usecolortheme{default}
 \setbeamercolor{normal text}{fg=black,bg=white}
@@ -58,27 +58,24 @@
 \useinnertheme{rounded}
 \setbeamertemplate{blocks}[rounded] % 影を消す（オプションで消せない？）
 
-%% フレームタイトル
-% \setbeamercolor{frametitle}{fg=white} % heightを設定すると黒になるのを修正
-
 %%% ナビゲーション
 \setbeamertemplate{navigation symbols}{} % ナビゲーションシンボルを消す
 \setbeamertemplate{footline}[frame number] % フッターはスライド番号のみ
 
-% フォントテーマ
+%%% フォントテーマ
 \usefonttheme{structurebold}
 \renewcommand{\kanjifamilydefault}{\gtdefault}  % 本文の和字もゴシック体に
 
-% 節ごとの目次フレーム
+%%% フレームのカスタマイズ
+%% フレームタイトルのサイズを少々小さめに
+\setbeamerfont{frametitle}{size=\large}
+\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
+\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
+
+%%% 節ごとの目次フレーム
 \AtBeginSection[]{
   \begin{frame}
     \frametitle{目次}
     \tableofcontents[currentsection,currentsubsection]
   \end{frame}
 }
-
-%% * フレームのカスタマイズ
-% フレームタイトルのサイズを少々小さめに
-\setbeamerfont{frametitle}{size=\large}
-\setbeamertemplate{itemize/enumerate body begin}{\normalsize}
-\setbeamertemplate{itemize/enumerate subbody begin}{\normalsize}
